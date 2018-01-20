@@ -1,0 +1,26 @@
+registration:
+    email:
+        message: |
+            Essalamu alaykum %username%!
+
+            To finish activating your account - please visit %confirmationUrl%
+            
+            This link can only be used once to validate your account.
+
+            Regards,
+            Mawaqit.net Team.
+
+resetting:
+    email:
+        subject: 'Reset Password'
+        message: |
+            Essalamu alaykum %username%!
+
+            To reset your password - please visit %confirmationUrl%
+
+            Regards,
+            Mawaqit.net Team.
+
+# Global strings
+layout:
+    forgot_password: 'Forgot your password ?'

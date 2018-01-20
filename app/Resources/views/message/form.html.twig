@@ -1,0 +1,18 @@
+{% include 'partial/flash_msg.html.twig' %}
+
+<div class="row">
+    <div class="col-md-6">
+        {{ form_errors(form) }}
+        {{ form_row(form._token) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.content) }}
+        {{ form_row(form.enabled) }}
+    </div>
+    <div class="col-md-4">
+        <div class="block-image">
+            {{ form_row(form.file) }}
+        </div>
+    </div>
+</div>
+{{ form_widget(form.save) }}
+<a href="{{path("message_index", {'mosque': mosque.id})}}" class="btn btn-lg btn-warning">{{'cancel'|trans}}</a>

@@ -1,0 +1,6 @@
+form:
+    configuration:
+        mandatory: Ce champ est obligatoire
+        custom_prayer_method: Les champs "Degré du fajr" et "Degré du ʿisha" doivent être renseignés
+    registration:
+        wrong_password_message: Le mot de passe doit contenir 8 caractères minimum, dont une majuscule, une minuscule et un nombre

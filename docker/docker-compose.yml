@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  mawaqit:
+    container_name : mawaqit
+    build: .
+    tty: true
+    links:
+      - mawaqit_db:mysql
+    ports:
+      - "1100:80"
+    volumes:
+      - ../:/var/www
+      - $SSH_AUTH_SOCK:/ssh-agent
+    environment:
+      SSH_AUTH_SOCK: /ssh-agent
+      
+  mawaqit_db:
+    container_name : mawaqit_db
+    image: mysql:5.6
+    expose:
+      - "1106"
+    ports:
+      - "1106:3306"
+    environment:
+      MYSQL_DATABASE: mawaqit
+      MYSQL_ROOT_PASSWORD: mawaqit

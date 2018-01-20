@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {% stylesheets 
+            "bundles/app/css/mosque.css"
+            filter="cssrewrite"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <h3>{% block form_title %}{{'mosque.add'|trans}}{% endblock %}</h3> <br>
+    <form action="{{ form_action|default(path('mosque_create'))}}" method="post" enctype="multipart/form-data">
+        {% include 'mosque/form.html.twig' %}
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+        '@AppBundle/Resources/public/js/mosque_edit.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

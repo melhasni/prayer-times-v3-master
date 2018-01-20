@@ -1,0 +1,104 @@
+services:
+    
+    ## Tiers services
+    gedmo.listener.sluggable:
+        class: Gedmo\Sluggable\SluggableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+            
+    gedmo.listener.timestampable:
+        class: Gedmo\Timestampable\TimestampableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+
+    gedmo.listener.sortable:
+        class: Gedmo\Sortable\SortableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+    
+    ## App services
+    app.google_api:
+        abstract: true
+        class: AppBundle\Service\Api\GoogleApi
+        arguments: 
+          - '%google_api_endpoint%'
+          - '%google_api_key%'
+          
+    app.weather_api:
+        abstract: true
+        class: AppBundle\Service\Api\WeatherApi
+        arguments: 
+          - '%weather_api_endpoint%'
+          - '%weather_api_key%'
+          - '@logger'
+          
+    app.google_service:
+        parent: app.google_api
+        class: AppBundle\Service\GoogleService
+        calls:
+          - [setLogger, ['@logger']]
+          
+    app.weather_service:
+        parent: app.weather_api
+        class: AppBundle\Service\WeatherService
+          
+    app.prayer_times_service:
+        class: AppBundle\Service\PrayerTimeService
+        arguments:
+            - "%kernel.cache_dir%"
+          
+            
+    app.mail_service:
+        class: AppBundle\Service\MailService
+        arguments:
+            - "@swiftmailer.mailer"
+            - "%supportEmail%"
+
+    app.user_service:
+        class: AppBundle\Service\UserService
+        arguments:
+            - "@swiftmailer.mailer.file"
+            - "@doctrine.orm.entity_manager"
+            - ["%supportEmail%", "%name%"]
+
+    # Forms
+    app.form_configuration:
+        class: AppBundle\Form\ConfigurationType
+        arguments:
+            - "@translator"
+        tags:
+            - { name: form.type }
+
+    app.form_message:
+        class: AppBundle\Form\MessageType
+        arguments:
+            - "@translator"
+        tags:
+            - { name: form.type }
+
+    app.form_prayer:
+        class: AppBundle\Form\PrayerType
+        arguments:
+            - "@translator"
+        tags:
+            - { name: form.type }
+            
+    app.form_mosque:
+        class: AppBundle\Form\MosqueType
+        arguments:
+            - "@security.authorization_checker"
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: form.type }
+
+    # Listeners
+    app.event.vich_uploader_post_upload:
+        class: AppBundle\EventListener\VichImageHandling
+        tags:
+            - { name: kernel.event_listener, event: vich_uploader.post_upload , method: resizeImage }            

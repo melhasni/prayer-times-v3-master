@@ -1,0 +1,7 @@
+app
+bin
+src
+var
+web
+composer.lock
+composer.json

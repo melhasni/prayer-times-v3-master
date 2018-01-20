@@ -1,0 +1,29 @@
+.slider .title{ 
+    margin:  20px 0;
+}
+
+.slider ul {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.slider ul li {
+    display: block;
+    float: left;
+    margin: auto;
+}
+
+.adhkar-after-prayer .title {
+    color: yellowgreen;
+}
+
+.message-info-slider .title {
+    color: #f0ad4e;
+}
+
+.slider ul li img {
+    width: 99%;
+    height: 100vh;
+}

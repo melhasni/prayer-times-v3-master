@@ -1,0 +1,139 @@
+AppBundle\Entity\Configuration:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ConfigurationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        jumuaTime:
+            type: string
+            length: 255
+            nullable: true
+        jumuaAsDuhr:
+            type: boolean             
+        noJumua:
+            type: boolean             
+        jumuaDhikrReminderEnabled:
+            type: boolean             
+        jumuaBlackScreenEnabled:
+            type: boolean             
+        jumuaTimeout:
+            type: integer             
+        aidTime:
+            type: string
+            length: 255
+            nullable: true
+        imsakNbMinBeforeFajr:
+            type: smallint
+            nullable: true
+        maximumIshaTimeForNoWaiting:
+            type: string
+            length: 255
+            nullable: true
+        waitingTimes:
+            type: simple_array
+        adjustedTimes:
+            type: simple_array
+            nullable: true
+        fixedTimes:
+            type: simple_array
+            nullable: true
+        duaAfterPrayerShowTimes:
+            type: simple_array
+        hijriAdjustment:
+            type: smallint
+        hijriDateEnabled:
+            type: boolean
+        duaAfterAzanEnabled:
+            type: boolean
+        duaAfterPrayerEnabled:
+            type: boolean
+        urlQrCodeEnabled:
+            type: boolean
+        azanBip:
+            type: boolean
+        azanVoiceEnabled:
+            type: boolean
+        iqamaBip:
+            type: boolean
+        iqamaEnabled:
+            type: boolean
+        blackScreenWhenPraying:
+            type: boolean
+        randomHadithEnabled:
+            type: boolean
+        randomHadithIntervalDisabling:
+            type: string
+            nullable: true
+        temperatureEnabled:
+            type: boolean
+        sourceCalcul:
+            type: string
+            length: 255
+        prayerMethod:
+            type: string
+            length: 255
+            nullable: true
+        latitude:
+            type: float
+            nullable: true
+        longitude:
+            type: float
+            nullable: true            
+        timezone:
+            type: smallint
+        dst:
+            type: smallint
+        hadithLang:
+            type: string
+            length: 50
+        fajrDegree:
+            type: smallint
+            nullable: true
+        ishaDegree:
+            type: smallint
+            nullable: true
+        wakeForFajrTime:
+            type: smallint
+            nullable: true
+        iqamaDisplayTime:
+            type: smallint
+        smallScreen:
+            type: boolean            
+        backgroundColor:
+            type: string            
+        calendar:
+            type: json_array
+            nullable: true
+        ninetyMinBetweenMaghibAndIsha:
+            type: boolean
+        timeToDisplayMessage:
+            type: smallint
+        created:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create  
+        updated:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+                    
+    oneToOne:
+        mosque:
+            targetEntity: AppBundle\Entity\Mosque
+            inversedBy: configuration
+            cascade:
+                - persist
+            joinColumn:
+                name:  mosque_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            
+    lifecycleCallbacks: {  }

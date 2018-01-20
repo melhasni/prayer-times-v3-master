@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{'site_title'|trans}}</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="user-scalable=no">
+        <meta name="google" content="notranslate">
+        <link rel="icon" href="{{asset('favicon.png')}}" />
+
+        {% stylesheets 
+            "bundles/app/css/fonts.css"
+            "bundles/app/css/full_message_slider.css"
+            filter="cssrewrite"
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+    </head>
+
+    <body>
+        <div id="slider" data-remote="{{path('ajax_get_messages', {id: mosque.id})}}"></div>
+
+        {% javascripts
+                '@AppBundle/Resources/public/jquery/js/jquery-1.12.4.min.js'
+                '@AppBundle/Resources/public/js/tools.js'
+                '@AppBundle/Resources/public/js/full_message_slider.js'
+        %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}    
+    </body>
+
+</html>

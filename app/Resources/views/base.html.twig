@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/png" href="{{asset('favicon.png')}}" />
+
+        <title>{% block title 'site_title'|trans %}</title>
+
+        {% stylesheets
+            "bundles/app/bootstrap-3.3.7/css/bootstrap.min.css"
+            "bundles/app/bootstrap-toogle/bootstrap-toggle.min.css"
+            "bundles/app/font-awesome/css/font-awesome.min.css"
+            "bundles/app/jquery/css/jquery-ui.min.css"
+            "bundles/app/css/fonts.css"
+            "bundles/app/css/main.css"
+            filter="cssrewrite"
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% include "partial/navbar.html.twig" %}
+
+        <div class="main">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        {% include "partial/global_modal.html.twig" %}
+        <script>
+            var yes = "{{'yes'|trans}}";
+            var no = "{{'no'|trans}}";
+        </script>
+
+        {% javascripts
+            '@AppBundle/Resources/public/jquery/js/jquery-1.12.4.min.js'
+            '@AppBundle/Resources/public/jquery/js/jquery-ui.min.js'
+            '@AppBundle/Resources/public/bootstrap-3.3.7/js/bootstrap.min.js'
+            '@AppBundle/Resources/public/bootstrap-toogle/bootstrap-toggle.min.js'
+            '@AppBundle/Resources/public/js/waiting_dialog.js'
+            '@AppBundle/Resources/public/js/main.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

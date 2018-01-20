@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {% stylesheets 
+            "bundles/app/css/message.css"
+            filter="cssrewrite"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <h3>{% block form_title %}{{'message.add'|trans}}{% endblock %}</h3>
+    <form action="{{ form_action|default(path('message_create', {'mosque': mosque.id}))}}" method="post" enctype="multipart/form-data">
+        {% include 'message/form.html.twig' %}
+    </form>
+{% endblock %}

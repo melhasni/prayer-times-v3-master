@@ -1,0 +1,21 @@
+<div class="modal fade" id="global-modal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <br>
+            <div class="modal-footer">                
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'close'|trans}}</button>
+            </div>
+        </div>
+    </div>
+</div>        
+
+{% block javascripts %}
+    {% javascripts '@AppBundle/Resources/public/js/global_modal.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}    
+{% endblock %}   

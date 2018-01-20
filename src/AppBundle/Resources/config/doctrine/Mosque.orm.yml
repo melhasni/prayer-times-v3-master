@@ -1,0 +1,102 @@
+AppBundle\Entity\Mosque:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MosqueRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+        name:
+            type: string
+            length: 1024
+        associationName:
+            type: string
+            length: 255
+            nullable: true
+        slug:
+            type: string
+            length: 255
+            unique: true
+            gedmo:
+                slug:
+                  updatable: false
+                  fields:
+                    - name    
+                    - city    
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        address:
+            type: string
+            length: 1024
+            nullable: true
+        city:
+            type: string
+            length: 255
+        country:
+            type: string
+            length: 255
+        zipcode:
+            type: string
+            length: 255
+        rib:
+            type: string
+            length: 1024
+            nullable: true
+        site:
+            type: string
+            length: 255
+            nullable: true
+        addOnMap:
+            type: boolean
+        image1:
+            type: string
+            length: 255
+            nullable: true            
+        image2:
+            type: string
+            length: 255
+            nullable: true            
+        image3:
+            type: string
+            length: 255
+            nullable: true            
+        created:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create            
+        updated:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        user:
+            targetEntity: AppBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+                onDelete: CASCADE 
+    oneToOne:
+        configuration:
+            targetEntity: AppBundle\Entity\Configuration
+            mappedBy: mosque
+    oneToMany:
+        messages:
+            targetEntity: AppBundle\Entity\Message
+            mappedBy: mosque
+            joinColumn:
+                onDelete: CASCADE

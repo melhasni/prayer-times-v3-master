@@ -1,0 +1,3 @@
+{% extends 'message/create.html.twig' %}
+{% set form_action = path('message_edit', {mosque: mosque.id, message: message.id}) %}
+{% block form_title %} {{ 'message.edit'|trans({'%title%': message.title}) }} {% endblock %}

@@ -1,0 +1,32 @@
+AppBundle\Entity\User:
+    properties:
+        plainPassword:
+            - Regex: 
+                pattern: '/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/'
+                message: "form.registration.wrong_password_message"              
+                groups: [appChangePassword]
+
+AppBundle\Entity\Mosque:
+    properties:
+        type:
+            - NotBlank: ~
+            - Choice :  {callback : "getTypes"}
+        name:
+            - NotBlank: ~
+        city:
+            - NotBlank: ~
+        zipcode:
+            - NotBlank: ~
+        country:
+            - NotBlank: ~
+
+AppBundle\Entity\Message:
+    constraints:
+        - AppBundle\Validator\Constraints\Message: ~
+            
+AppBundle\Entity\Configuration:
+    constraints:
+        - AppBundle\Validator\Constraints\Configuration: ~
+    properties:
+        hadithLang:
+            - Choice: {callback : "getHadithLangs"}

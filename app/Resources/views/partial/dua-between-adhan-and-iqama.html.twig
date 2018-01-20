@@ -1,0 +1,12 @@
+<div class="douaa-between-adhan-iqama display-none">
+    <div class="ar">
+        <div class="title">الدعاء لا يرد بين الأذان والإقامة</div>
+        <p>عَنْ أَنَسِ بْنِ مَالِكٍ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: الدُّعَاءُ لَا يُرَدُّ بَيْنَ الْأَذَانِ وَالْإِقَامَةِ</p>
+    </div>
+
+    {% if app.request.locale != 'ar' %}
+        <div class="fr">
+            <p>{{'duaBetweenAthanAndIqama.text'|trans}}</p>
+        </div>
+    {% endif %}
+</div>

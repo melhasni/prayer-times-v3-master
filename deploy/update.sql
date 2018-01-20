@@ -1,0 +1,1 @@
+update mosque set updated = NOW();

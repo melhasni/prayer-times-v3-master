@@ -1,0 +1,25 @@
+registration:
+    email:
+        subject: 'Bienvenue %username% !'
+        message: |
+            Essalamu alaykum %username% !
+
+            Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
+            
+            Ce lien ne peut être utilisé qu'une seule fois pour valider votre compte.
+
+            Cordialement,
+            L'équipe mawaqit.net
+
+resetting:
+    email:
+        message: |
+            Essalamu alaykum %username% !
+
+            Pour réinitialiser votre mot de passe, merci de vous rendre sur %confirmationUrl%
+
+            Cordialement,
+            L'équipe mawaqit.net
+
+layout:
+    forgot_password: Mot de passe oublié ?

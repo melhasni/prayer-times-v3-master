@@ -1,0 +1,32 @@
+.calendar-prayer {
+    padding: 1px;
+    float: left;
+    width: 14.2%;
+}
+
+.calendar-prayer-time {
+    padding: 0;
+}
+
+.checkbox label, .radio label {
+    font-weight: 700; 
+}
+
+label {
+    display: inline;
+}
+
+.checkbox {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.panel-default .panel-heading {
+    background-color: #e2e2e2;
+    padding: 15px;
+}
+
+.panel-default {
+    border-color: #486e3b;
+}

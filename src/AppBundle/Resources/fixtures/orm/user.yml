@@ -1,0 +1,7 @@
+AppBundle\Entity\User:
+    LOCAL:
+        username: local
+        plainPassword: local
+        email: local\@local.com
+        enabled: true
+        roles: [ROLE_ADMIN]

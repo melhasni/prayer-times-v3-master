@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}"/>
+
+    <title>{{ 'site_title'|trans }}</title>
+    <link rel="stylesheet" href="/bundles/app/bootstrap-3.3.7/css/bootstrap.min.css" type="text/css">
+</head>
+
+<body style="position: relative">
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <p style="font-size: 400%">Oops!</p>
+                <p style="font-size: 1000%">{{ status_code }}</p>
+                <div style="font-size: 200%">
+                    {{ ('error' ~ status_code) |trans }}
+                </div>
+                <div style="margin-top: 50px">
+                    <a href="{{ path('homepage') }}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-home"></span> {{ 'goHome'|trans }}
+                    </a>
+                    <a href="{{ path('homepage') }}#contact" class="btn btn-default">
+                        <span class="glyphicon glyphicon-envelope"></span> {{ 'contactUs'|trans }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="position: fixed; bottom: 10px;">
+    <span>Copyright &copy; Binary Consulting</span>
+</footer>
+</body>
+</html>

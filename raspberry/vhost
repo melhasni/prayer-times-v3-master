@@ -1,0 +1,18 @@
+server {
+	listen 80 default_server;
+	root /home/pi/prayer-times-v3/web;
+
+    location / {
+        try_files $uri /app.php$is_args$args;
+    }
+
+    location ~ ^/(\w+)\.php(/|$) {
+        client_max_body_size 20M;
+        fastcgi_pass unix:/run/php/php7.1-fpm.sock;
+        include fastcgi_params;
+        fastcgi_read_timeout 300;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param HTTPS off;
+    }
+}

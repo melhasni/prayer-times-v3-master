@@ -1,0 +1,148 @@
+body {
+    line-height: 1.2;
+    padding: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.row{
+    margin: 0;
+    padding: 0 10px;
+}
+
+.header{
+    font-size: 20px;
+    color: yellowgreen;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.time{
+    font-size: 400%;
+}
+
+.gregorianDate, .hijriDate{
+    font-size: 150%
+}
+
+.top-content{
+    margin-bottom: 10px;
+}
+
+.prayer-content{
+    margin: 20px 0;
+}
+
+.prayer-content>div {
+    height: 40px;
+    line-height: 40px;
+}
+
+.prayer-content .athan-img {
+    width: 25px;
+}
+
+.prayer-content .text {
+    font-size: 150%;
+}
+
+.prayer-content .wait {
+    font-size: 150%;
+}
+
+.prayer-content .prayer, .chourouk-id, .joumouaa-id, .imsak-id, .aid-id{
+    font-size: 250% !important;
+    color: yellowgreen;
+}
+
+.aid-id {
+    color: red;
+}
+
+.prayer-hilighted {
+    color: #f0ad4e  !important;
+    -webkit-box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+    -moz-box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+    box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+}
+
+.custom-time, .joumouaa{
+    font-size: 150%;
+}
+
+.footer{
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.flash{
+    visibility: hidden;
+}
+
+.site{
+    font-size: 100%;
+}
+.site>span{
+    color: #1b6d85;
+}
+
+.assosciation{
+    font-size: 100%;
+}
+
+.version{
+    font-size: 10px;
+    color: #adadad;
+    text-align: right;
+    padding: 3px;
+}
+
+.title {
+    color: yellowgreen;
+    margin-bottom: 20px;
+}
+
+.display-none {
+    display: none;
+}
+
+.support{
+    margin-top: 10px;
+    font-size: 90%;
+    color: gray;
+}
+.support a {
+    color: gray !important;
+}
+
+.iqama{
+    color: #fff;
+    padding: 10px;
+}
+
+.iqama .top{
+    height: 25%;
+    font-size: 400%;
+}
+
+.iqama .image{
+    background-image: url(/bundles/app/prayer-times/img/phone.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    height: 400px;
+}
+
+.hijriDate{
+    margin-bottom: 5px;
+}
+
+.adhan, .douaa-between-adhan-iqama{
+    font-size: 200%;
+}
+
+.adhan .title, .douaa-between-adhan-iqama .title{
+    margin-top: 10px;
+}

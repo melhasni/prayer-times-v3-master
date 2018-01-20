@@ -1,0 +1,10 @@
+AppBundle\Entity\Mosque:
+    file1:
+        mapping:           image
+        filename_property: image1
+    file2:
+        mapping:           image
+        filename_property: image2
+    file3:
+        mapping:           image
+        filename_property: image3

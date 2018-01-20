@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'partial/flash_msg.html.twig' %}
+
+    <h3>{{'user'|trans}}:  {{user.username}}</h3>
+    <div class="row col-md-6">
+        <i class="fa fa-envelope"></i> <a href="mailto:{{user.email}}">{{user.email}}</a> <br>
+        {{'creation_date'|trans}} : {{user.created|date('d/m/y')}} <br>
+        {% if user.id != app.user.id %}
+            {{'enabled'|trans}} ? &nbsp; <input id="user_enabled" data-url="{{path('ajax_user_enable', {id: user.id, status: '_status_'})}}" type="checkbox" class="form-group" {{user.enabled ? 'checked="checked"': ''}}/>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+       '@AppBundle/Resources/public/js/user_show.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}    
+{% endblock %}

@@ -1,0 +1,7 @@
+var/logs
+var/sessions
+web/app_dev.php
+web/upload
+web/static
+web/robots.txt
+web/.htaccess

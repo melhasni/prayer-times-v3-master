@@ -1,0 +1,28 @@
+fajr: "Alfَjْr"
+shuruk: "Alshuruqْ"
+zuhr: "Alzuhْr"
+asr: "Alʿaَsْr"
+maghrib: "Almَghْrِb"
+isha: "Alʿeِshَa'"
+jumua: "Aljumuʿeَh"
+aid: "Aَlَahu alʿeِydْ"
+imsak: "Aleِmْsَak"
+iqama: "Aleِqَamَh"
+azan: "Alaَdَan"
+
+invocationAfterPrayer:
+    title: "Alaَdْkَar bَ'eْdَ alsَlَah"
+
+jumuaReminder:
+    text: |
+        'eَnْ aَbِy hurَyْrَhَ qَalَ qَalَ rَsuwlu allَhِ sَlَa allَhm 'eَlَyْhِ wَsَlَmَ mَnْ tَwَdَaَ fَaَhْsَnَ alْwuduw'َ thumَ aَtَa
+        alْjumu'eَhَ fَasْtَmَ'eَ wَaَnْsَtَ ghufِrَ lَhu mَa bَyْnَhu wَbَyْnَ alْjumu'eَhِ wَzِyَadَhu thَlathَhِ aَyَamen wَmَnْ mَsَ alْhَsَa fَqَdْ lَghَa
+
+duaAfterAthan:
+    title: "Alduʿeَa'u bَ'eْdَ alaَdَan"
+    text: |
+        Allhumَ rَbَ hَdِhِ ald'eْwَhِ altamَh wَalslahِ alqَa'eِmَh atِ mhَmَdaan alwَsylhَ wَalْfَdylَh wَabْ'eَthْh mَqamaan mَhmwdaan alَdy wَ'eَdْtَh
+
+duaBetweenAthanAndIqama:
+    text: |
+        'Eَnْ aَnَsِ bْnِ mَalِken qَalَ: qَalَ rَsuwlu allَhِ sَlَa allَhu 'eَlَyْhِ wَsَlَmَ: aldu'eَa'u lَa yurَdu bَyْnَ alْaَdَanِ wَalْeِqَamَh

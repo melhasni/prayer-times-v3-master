@@ -1,0 +1,30 @@
+parameters:
+    name: 'Mawaqit'
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: symfony
+    database_user: root
+    database_password: ~
+    mailer_transport: smtp
+    mailer_host: SSL0.OVH.NET
+    mailer_port: 587
+    mailer_user: %supportEmail%
+    mailer_password: ~
+    mailer_spool_dir: '%kernel.cache_dir%/swiftmailer/spool'
+    no_reply_address: 'no-reply@mawaqit.net'
+    secret: theSecret
+    languages: [fr, ar, en]
+    version: 3.0.0
+    site: mawaqit.net
+    supportTel1: '+33629111641'
+    supportTel2: '+33666137234'
+    supportEmail: contact@mawaqit.net
+
+    # Google API
+    google_api_key: 'AIzaSyC0n3EKMQBPimJseyl_dD-JgemvYaX7_K8'
+    google_maps_api_key: 'AIzaSyBzNPXkdlH11DFZZ0lf8Kj8dao-W7K_MaU'
+    google_api_endpoint: 'https://maps.googleapis.com/maps/api'
+
+    # Weather API
+    weather_api_endpoint: 'http://api.openweathermap.org/data/2.5/weather'
+    weather_api_key: 'c9560e670b050ad1db74f37b086afd44'

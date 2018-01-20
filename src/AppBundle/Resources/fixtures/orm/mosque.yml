@@ -1,0 +1,11 @@
+AppBundle\Entity\Mosque:
+    LOCAL_MOSQUE:
+        user: '@LOCAL'
+        name: Mosquée NOM
+        slug: mosquee
+        associationName: Association XXX
+        city: Paris
+        country: France
+        phone: 06.00.00.00.00
+        zipcode: 75000
+        rib: "IBAN FRXX XXXX XXXX XXXX XXXX XXXX XXX / BIC XXXXXXXX"

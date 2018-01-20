@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'partial/flash_msg.html.twig' %}
+
+    <h1>{{ 'users'|trans }}</h1>
+
+    <div class="row mt-2">
+        <div class="col-md-8 col-xs-12 text-left">
+            <form action="{{ path('user_index') }}" class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <label> {{ 'disabledOnly'|trans }}</label>
+                    <input type="checkbox" {{ app.request.get('disabled') == 'on' ? "checked" : "" }} name="disabled">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" value="{{ app.request.get('search') }}" class="form-control" name="search" placeholder="{{ 'search'|trans }}">
+                </div>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+        </div>
+        <div class="col-md-4 col-xs-12 text-right">
+            <a href="{{ path('users_send_email') }}" class="btn btn-primary" title="Envoyez un mail à tous les utilisateurs"><i class="fa fa-envelope"></i> {{ 'email.send.action'|trans }}</a>
+        </div>
+    </div>
+
+    <div class="navigation text-center">
+        {{ knp_pagination_render(users) }}
+    </div>
+
+    <div class="hidden-xs hidden-sm mt-2">
+        <table class="table table-inverse">
+            <thead>
+            <tr class="warning">
+                <th>{{ 'name'|trans }}</th>
+                <th>{{ 'email'|trans }}</th>
+                <th class="text-center">{{ 'active'|trans }}</th>
+                <th>{{ 'creation_date'|trans }}</th>
+                <th>{{ 'last_login'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="{{ not user.enabled ? 'danger' : '' }}">
+                    <td><a href="{{ path('user_show', {id: user.id}) }}">{{ user.username }}</a></td>
+                    <td>{{ user.email }}</td>
+                    <td class="text-center">
+                        <span class="fa fa-{{ user.enabled ? 'check' : 'close' }}"></span>
+                    </td>
+                    <td>{{ user.created|date('d/m/Y H:i') }}</td>
+                    <td>{{ user.lastLogin|date('d/m/Y H:i') }}</td>
+                    <td>
+                        {% if user.id != app.user.id %}
+                            {% include 'partial/delete_button.html.twig' with {entity: user} %}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="hidden-lg hidden-md">
+        {% for user in users %}
+            <div class="row {{ not user.enabled ? 'alert-danger' : '' }}"
+                 style="border-bottom: 1px solid #ccc; padding: 10px 0; margin-top: 10px ">
+                <div class="col-xs-10">
+                    <a href="{{ path('user_show', {id: user.id}) }}"><strong>{{ user.username }}</strong></a> <br>
+                    {{ user.email }}<br>
+                    {{ 'enabled'|trans }} ? <span class="fa fa-{{ user.enabled ? 'check' : 'close' }}"></span>
+                    <div>{{ 'creation_date'|trans }}: {{ user.created|date('d/m/Y H:i') }}</div>
+                    <div>{{ 'last_login'|trans }}: {{ user.lastLogin|date('d/m/Y H:i') }}</div>
+                </div>
+
+                <div class="col-xs-2">
+                    {% if user.id != app.user.id %}
+                        {% include 'partial/delete_button.html.twig' with {entity: user} %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'partial/delete_modal.html.twig' with {path: 'user_delete'} %}
+
+    <div class="mt-2">
+        <div class="navigation text-center">
+            {{ knp_pagination_render(users) }}
+        </div>
+    </div>
+
+{% endblock %}
+
+    {% block javascripts %}
+        {% javascripts
+            '@AppBundle/Resources/public/js/delete_modal.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+{% endblock %}

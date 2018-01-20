@@ -1,0 +1,15 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-warning dropdown-toggle dropdown-menu-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="hidden-xs">Actions</span> <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="{{ path('mosque_edit', {id: mosque.id}) }}"><span class="fa fa-pencil"></span> {{ 'form.edit.action'|trans }}</a></li>
+        <li><a href="{{ path('mosque_configure', {id: mosque.id})}}"><span class="fa fa-cog"></span> {{'form.configure.action'|trans}}</a></li>
+        <li><a href="{{ path('message_index', {mosque: mosque.id})}}"><span class="fa fa-comment"></span> {{'message.manage'|trans}}</a></li>
+        <li><a href="{{ path('mosque_clone', {id: mosque.id}) }}"><span class="fa fa-copy"></span> {{ 'form.clone.action'|trans }}</a></li>
+        <li><a href="#" data-url="{{path('mosque_refresh', {id: mosque.id})}}" class="btn-refresh" title="{{'mosque.refresh'|trans}}"><span class="fa fa-refresh"></span> {{ 'refresh'|trans }}</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#" class="delete-button" data-id="{{ mosque.id }}"><span class="fa fa-trash"></span> {{ 'form.delete.action'|trans }}</a></li>
+    </ul>
+</div>

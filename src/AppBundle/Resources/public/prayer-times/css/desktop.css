@@ -1,0 +1,356 @@
+body {
+    overflow: hidden;
+    height:100vh;
+    position: relative;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tablette mode paysage */
+@media (max-width:1300px){
+    body {
+        font-size: 8px;
+    }
+}
+
+.main, 
+.iqama, 
+.adhan, 
+.douaa-between-adhan-iqama, 
+.jumua-dhikr-reminder {
+    height:100vh;
+    margin: auto; 
+}
+
+.top-content{
+    height: 55%;
+    position: relative;
+    overflow: hidden;
+}
+
+.main{
+    width: 98%;    
+}
+
+.top-content .adhan-flash, .top-content .alarm-flash{
+    font-size: 1700%;
+    line-height: 160%;
+}
+
+.prayer-content{
+    height:32%;
+    border-top: 1px #fff solid;
+    border-bottom: 1px #fff solid;
+}
+
+.header{
+    font-size: 550%;
+    color: yellowgreen;
+    padding-top: 10px;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: auto;
+}
+
+.joumouaa, .custom-time{
+    padding-top: 100px;
+    font-size: 500%;
+}
+
+.chourouk-id, .joumouaa-id, .aid-id, .imsak-id{
+    color: yellowgreen;
+    font-size: 160%;
+}
+
+.aid-id {
+    color: red;
+}
+
+.time{
+    font-size: 1250%;
+}
+
+.top-content .time{
+    text-shadow: 6px 6px 10px #632e2e;
+}
+
+.gregorianDate, .hijriDate{
+    font-size: 500%;
+}
+
+.prayer-text {
+    font-size: 600%;
+    line-height: 130%;
+}
+
+.prayer-text .text, 
+.prayer-time .prayer, 
+.prayer-wait .wait {
+    width: 20%;
+    float: left;
+}
+
+.prayer-time {
+    line-height: 110px;
+}
+
+.prayer-time .prayer{
+    color: yellowgreen;
+    font-size: 780%;
+}
+
+.prayer-wait .wait{
+    font-size: 580%;
+}
+
+.prayer-hilighted {
+    color: #f0ad4e  !important;
+    -webkit-box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+    -moz-box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+    box-shadow: 0px 0px 31px 4px rgba(255,255,255,0.47);
+}
+
+.text-hilighted {
+    color: #f0ad4e  !important;
+}
+
+.flash, .visibilty-hidden{
+    visibility: hidden;
+}
+
+.iqama{
+    color: #fff;
+    position: relative;
+}
+
+.iqama .top{
+    height: 25%;
+    font-size: 900%;
+}
+
+.iqama .bottom{
+    padding-top: 50px;
+    font-size: 700%;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+
+.iqama .image{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    height: 50%;
+}
+
+.loudspeaker{
+    width: 300px;
+}
+
+.adhan .ar {
+    font-size: 700%;
+}
+
+.adhan .fr {
+    margin-top: 50px;
+    font-size: 500%;
+}
+
+.douaa-between-adhan-iqama .ar {
+    font-size: 700%;
+}
+
+.douaa-between-adhan-iqama .ar .title {
+    margin-bottom: 20px;
+}
+
+.douaa-between-adhan-iqama .fr {
+    margin-top: 50px;
+    font-size: 600%;
+}
+
+.jumua-dhikr-reminder .title {
+    font-size: 130%;
+    margin: 20px 0;
+}
+.jumua-dhikr-reminder .ar {
+    line-height: 160%;
+    font-size: 630%;
+}
+
+.jumua-dhikr-reminder .fr {
+    margin-top: 50px;
+    font-size: 440%;
+}
+
+.title {
+    color: yellowgreen;
+}
+
+.site{
+    font-size: 200%;
+}
+
+.assosciation{
+    font-size: 200%;
+}
+
+.support{
+    font-size: 150%;
+    color: gray;
+}
+.support a {
+    color: gray !important;
+}
+
+.version{
+    font-size: 20px;
+    color: #adadad;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.qr-code{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #fff;
+    border: solid 1px #fff;
+}
+
+.tooltip-arrow,
+.header + .tooltip > .tooltip-inner {
+    background-color: #f0ad4e;
+    color: #000;
+    text-align: left;
+    font-size: 14px;
+}
+
+.display-none {
+    display: none;
+}
+
+.footer{
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 0 200px;
+}
+
+.random-hadith {
+    height: 68%;
+    position: relative;
+}
+
+.random-hadith .text {
+    padding-top: 10px;
+    height: 92%;
+    overflow: hidden;
+}
+
+.random-hadith .text div{
+    font-size: 150px;
+    line-height: 300px;
+}
+
+.time-bottom{
+    font-size: 450%;
+    position: absolute;
+    bottom: -10px;
+    right: 5px;
+}
+
+.next-prayer {
+    font-size: 450%;
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+}
+
+.time-bottom, .next-prayer{
+    color: #ec7047;    
+}
+
+.next-prayer .countdown {
+    display: inline;
+}
+
+.temperature
+{
+    top: 10px;
+    right: 10px;
+    font-size: 600%;
+    position: fixed;
+}
+
+.red{
+    color: #AA3333;
+}
+
+.orange{
+    color: #d58512;
+}
+
+.blue{
+    color: #3498db ;
+}
+
+.btn-settings{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 300%;
+}
+
+.btn-settings a{
+    color: #fff;
+}
+
+/* short message css */
+.short-message {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: #000000;
+}
+.short-message:before {
+    content: 'Text à défiler tout le temps et pendant lontemps';
+    font-size: 1000%;
+    color: #FFFFFF;
+    position: absolute;
+    width: 200%;
+    -webkit-animation: slide 20s linear infinite;
+    -moz-animation: slide 20s linear infinite;
+    animation: slide 20s linear infinite;
+}
+@-webkit-keyframes slide {
+    0% {
+        left: 180%;
+    }
+    100% {
+        left: -180%;
+    }
+}
+@-moz-keyframes slide {
+    0% {
+        left: 180%;
+    }
+    100% {
+        left: -180%;
+    }
+}
+@keyframes slide {
+    0% {
+        left: 180%;
+    }
+    100% {
+        left: -180%;
+    }
+}

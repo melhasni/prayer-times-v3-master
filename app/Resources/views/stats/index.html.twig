@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'stats'|trans ~ ' - ' ~parent() }}{% endblock %}
+
+
+{% block stylesheets %}
+    {% stylesheets
+        "bundles/app/css/stats.css"
+        filter="cssrewrite" %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    {% include 'partial/flash_msg.html.twig' %}
+
+    <h1>{{ 'stats'|trans }}</h1>
+
+    <h3>Mosquées</h3>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail mosque">
+                <div class="caption">
+                    <h3>Nombre total d'installation : {{ mosques.total }}</h3>
+                    <p>Nombre d'installation tout type confondu</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail mosque">
+                <div class="caption">
+                    <h3>Nombre de mosquée : {{ mosques.totalMosques }}</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail mosque">
+                <div class="caption">
+                    <h3>Nombre de domicile : {{ mosques.totalHomes }}</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12">
+            <div class="">
+                {% for item in mosques.byCountry %}
+                    <button class="btn btn-success mt-1">
+                        {{ item.country }} <span class="badge">{{ item.nb }}</span>
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <h3>{{ 'users'|trans }}</h3>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail user">
+                <div class="caption">
+                    <h3>Nombre total d'utilisateurs inscrits : {{ users.total }}</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail user">
+                <div class="caption">
+                    <h3>Nombre d'utilisateurs activés : {{ users.enabled }}</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail user">
+                <div class="caption">
+                    <h3>Nombre d'utilisateurs désactivés : {{ users.disabled }}</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

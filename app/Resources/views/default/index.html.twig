@@ -1,0 +1,598 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block additional_stylesheets %}
+    {% stylesheets
+        "bundles/app/flexSlider/flexslider.css"
+        filter="cssrewrite" %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <!-- projet Section -->
+        <section id="projet">
+            <div class="container">
+                <h2 class="section-heading">Le projet</h2>
+                <p class="text-muted">
+                    La plupart de nos mosquées sont aujourd'hui équipées d’horloges digitales en forme de tableau
+                    éléctronique. Ces horloges ne répondent
+                    malheureusement pas aux besoins de plus en plus variés et exigents de nos mosquées.
+                    Les horloges digitales sont généralement dotées d’un réglage manuel
+                    (à faire tous les jours), ou d’un réglage automatique avec donc des horaires parfois inexacts
+                    et pas forcément adapatés à la ville dans laquelle se situe la mosquée .
+                    De plus leurs fonctionalités se limitent à l'affichage des horaires de prière.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
+                        <div class="flexslider text-center electronic-board">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/electronic-prayer-board-1.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/electronic-prayer-board-2.jpg') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-muted">
+                    Avec l’aide d’Allah le Tout Puissant, nous nous sommes donc lancés dans le développement d’un
+                    logiciel pour améliorer et simplifier l’affichage des horaires de prière. <br>
+                    Après plusieurs mois de travail et de tests effectués dans différentes mosquées, nous sommes
+                    parvenus, grâce à Allah, à sortir une version stable et précise.
+                    <br><br>
+                    Notre logiciel est entièrement gratuit et open source, il est accessible sur github à l'adresse
+                    suivante
+                    <a target="_blank" href="https://github.com/binary010100/prayer-times">https://github.com/binary010100/prayer-times</a><br>
+                    <i style="font-weight: bold" class="fa fa-warning"></i> TOUTE UTILISATION A BUT LUCRATIF EST
+                    STRICTEMENT INTERDITE
+                </p>
+
+                <h3 class="section-heading">Comment ça fonctionne ?</h3>
+                <p class="text-muted">
+                    Notre logiciel est développé en JavaScript un langage web très connu, exécuté par un mini
+                    ordinateur, le Raspberry Pi 3 ou par n'importe qu'elle autre ordinateur,
+                    Smart TV, box TV ou toute autre apareil pouvant lancer un navigateur internet.
+                    En effet le logiciel est une simple page internet est toute l'intelligence est concentrée dans du
+                    code javascript.
+                </p>
+
+                <img src="{{ asset('bundles/app/agency/img/raspberry.jpg') }}" class="img-responsive"
+                     style="display: inline" alt="">
+
+                <h3 class="section-heading">Quelles sont les fonctionnalités principales du logiciel ?</h3>
+
+                <h4 class="service-heading">Affichage des horaires de prière en plusieurs langues</h4>
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/french.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/arabic.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="service-heading">Signal sonor et visuel du adhân et Iqâma</h4>
+                <p class="text-muted">Lorsqu’il est l'heure du adhan ou de la iqama, l'écran se met à clignoter et un
+                    signal sonor retentira.</p>
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/adhan-1.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/adhan-2.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/iqama.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="service-heading">Affichage de rappels et invocations</h4>
+                <p class="text-muted">Entre chaque adhan et iqama, ainsi qu'à la fin de chaque prière, des rappels et
+                    invocations sont affichés.</p>
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/douaa-after-adhan.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/douaa-between-adhan-and-iqama.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/douaa-after-prayer.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/jumua-dhikr.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="service-heading">Affichage d'annonces en texte ou images</h4>
+                <p class="text-muted">
+                    Avant et après chaque prière, si configurés depuis l'éspace utilisateur les annonces défileront sur
+                    l'écran.<br>
+                </p>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/message-1.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/message-2.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="service-heading">Affichage de hadiths</h4>
+                <p class="text-muted">
+                    Afin de rendre l'écran encore plus utile, le logiciel permet un affichage aléatoire d'un hadith du
+                    prophète "que la prière d'Allah et son salut soient sur lui", toutes les 5 minutes<br>
+                </p>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/hadith-ar.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/hadith-fr.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="service-heading">Une version adaptée au mobile et tablette</h4>
+                <p class="text-muted">
+                    Afin de faciliter aux fideles la consultation des horaires de prière de leur mosquées,
+                    nous créons un site internet adatapté au mobile et tablette pour chaque installation.<br>
+                </p>
+                <p class="text-left">
+                    Exemples:  <a target="_blank" href="{{ path('mosque', {'slug': 'mosquee-essunna-houilles'}) }}">{{ url('mosque', {'slug': 'mosquee-essunna-houilles'}) }}</a>
+                </p>
+                <div><img src="{{ asset('bundles/app/agency/img/software/mobile.png') }}" class="img-responsive"
+                          style="display: inline" alt=""><br></div>
+
+                <h4 class="service-heading">Pilotez l'écran depuis votre smartphone</h4>
+
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/mobile-admin.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/mobile-admin-2.png') }}"/>
+                                </li>
+                                <li>
+                                    <img src="{{ asset('bundles/app/agency/img/software/mobile-admin-3.png') }}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="service-heading">Entièrement configurable</h4>
+                <p class="text-muted">
+                    Nous avons essayé de pousser la configuration du logiciel au maximum. Voici quelques exemples de
+                    fonctionnalités
+                    directement configurables depuis l'interface dédiée.
+                </p>
+                <ul class="text-muted text-left">
+                    <li>Choix entre calcul des horaires automatique par le logiciel ou lecture depuis des fichiers CSV
+                    </li>
+                    <li>Choix de la langue</li>
+                    <li>Affichage de l'heure de l'aïd à l’approche de l’évènement</li>
+                    <li>Fixation des horaires (exemple: fixer l'heure du `isha en hiver)</li>
+                    <li>Ajustement des temps d'attente entre adhan et iqama</li>
+                    <li>Compte à rebours avant iqama</li>
+                    <li>Ajustement des horaires</li>
+                    <li>Affichange d'annonces en texte ou image</li>
+                    <li>Modification des textes affichés en haut et en bas de l'écran</li>
+                    <li>Modification de la couleur de fond</li>
+                    <li>Bip lors du adhân et iqâma</li>
+                    <li>Adhan du haram</li>
+                    <li>Affichage de la temprérature</li>
+                    <li>Affichage du QR code pour faciliter la copie du lien internet</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Mosquées équipées Grid Section -->
+        <section id="mosquees" class="bg-light-gray">
+            <div class="container">
+                <h2 class="section-heading">Quelques mosquées équipées</h2>
+                <p class="section-subheading text-muted">
+                    Grace à Allah notre logiciel est installé dans plus de <strong>{{ totalMosquesCount }}</strong>
+                    mosquées
+                    partout dans le monde, voici quelques exemples
+                </p>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="map"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for mosque in mosquesWithImage %}
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a href="#mosque-{{ mosque.slug }}" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="{{ vich_uploader_asset(mosque, 'file1') }}"
+                                     class="img-responsive mosque-image"
+                                     alt="{{ mosque.name }}"/>
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{ mosque.title }} {{ mosque.country }} </h4>
+                                <a target="_blank" href="{{ path('mosque', {'slug': mosque.slug}) }}">Consultez les
+                                    horaires</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if app.request.get('mosque_nb') != 'all' %}
+                    <a href="{{ path("homepage", {'mosque_nb':'all'}) }}#mosquees" class="page-scroll btn btn-xl">Voir
+                        plus</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Mosques Modals -->
+        {% for mosque in mosquesWithImage %}
+            <div class="portfolio-modal modal fade" id="mosque-{{ mosque.slug }}" tabindex="-1" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="modal-body">
+                                <h2>{{ mosque.title }} {{ mosque.country }}</h2>
+                                <p class="item-intro text-muted">{{ mosque.associationName }}</p>
+                                <img src="{{ vich_uploader_asset(mosque, 'file1') }}"
+                                     class="img-responsive  img-centered" alt="{{ mosque.title }}"/>
+                                <img class="img-responsive img-centered"
+                                     src="{{ vich_uploader_asset(mosque, 'file2') }}">
+                                <img class="img-responsive img-centered"
+                                     src="{{ vich_uploader_asset(mosque, 'file3') }}">
+
+                                <ul class="list-inline">
+                                    <li>Date d'ajout: {{ mosque.created|date("d/m/Y") }}</li>
+                                    <li>Consultez les horaires: <a target="_blank"
+                                                                   href="{{ path('mosque', {'slug': mosque.slug}) }}">{{ url('mosque', {'slug': mosque.slug}) }}</a>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- Participez Section -->
+        <section id="participer">
+            <div class="container">
+                <h2 class="section-heading">équipez votre mosquée</h2>
+                <p>
+                    <i style="font-weight: bold">Nous installons notre logiciel gratuitement pour votre mosquée, dans le
+                        seul but de satisfaire Allah et espérer Son paradis.</i> <br>
+                    Pour participer à ce projet et ainsi équiper votre mosquée c'est très simple :
+                </p>
+                <h4 class="section-heading">Achetez le matériel et nous nous occupons de l'installtion</h4>
+                <p class="text-muted">Voici la liste du matériel nécessaire à l’installation</p>
+                <ul class="text-muted text-left">
+                    <li>Un écran plat, idéalement 32 pouces / 80 cm ou plus. Prix à partir de 160€
+                        <a target="_blank"
+                           href="https://www.fnac.com/TV-Polaroid-TQL32R4-HD/a8111239/w-4?oref=00000000-0000-0000-0000-000000000000&Origin=SEA_GOOGLE_PLA_TV&mckv=_dc&pcrid=64457390063&ectrans=1&gclid=CjwKEAjw_uvHBRDUkumF0tLFp3cSJACAIHMYB1pCi6As-CoJJpU7BP8zBZ03lyuSoQ0B2A65pujyihoC_Zfw_wcB">
+                            chez la fnac par exemple
+                        </a>
+                    </li>
+
+                    <li>Un kit Raspberry PI 3 (ce kit n'est pas nécessaire si vous optez pour une Smart TV), prix 53€ environ
+                        <a target="_blank"
+                           href="https://www.amazon.fr/Raspberry-Pi-Official-Desktop-Starter/dp/B01CI5879A/ref=sr_1_2?ie=UTF8&qid=1492881089&sr=8-2&keywords=un%2Braspberry%2Bpi%2B3&th=1">
+                            chez amzon par exemple
+                        </a>
+                        Ou encore moins cher chez
+                        <a target="_blank"
+                           href="https://fr.aliexpress.com/item/H-Raspberry-Pi-3-Model-B-kit-pi-3-board-pi-3-case-European-power-supply/32785912149.html?spm=2114.13010608.0.0.UlZLi4">
+                            Aliexpress 41€
+                        </a>
+                        environ (Attention ! livraison sous 15-30 jours)
+                    </li>
+                    <li>Un support mural pour la TV entre 10 et 15€</li>
+                    <li>Un cable HDMI + Une multiprise</li>
+                    <li>Si vous n'avez pas internet
+                        <a href="https://www.amazon.fr/Horloge-pr%C3%A9cision-DS3231-RTC-Compatible-Raspberry/dp/B01F6MJZGQ/ref=sr_1_4?ie=UTF8&qid=1508527126&sr=8-4&keywords=rtc+ds3231">
+                            une horloge RTC
+                        </a>
+                    </li>
+
+                </ul>
+                <img class="img-responsive" src="{{ asset('bundles/app/agency/img/raspberry-kit.png') }}" alt=""><br>
+                <h4 class="section-heading">Coût global du matériel : 220€ environ</h4>
+                <h4 class="section-heading">Qu'Allah accepte vos œuvres et les notres</h4>
+            </div>
+        </section>
+
+        <!-- Section Comment istaller l'application -->
+        <section id="install" class="bg-light-gray">
+            <div class="container">
+                <h2 class="section-heading">Installez vous même le logiciel</h2>
+                <p>
+                    Vous pouvez aussi installer vous même le logiciel sur le raspberry, il suffit de suivre les étapes
+                    ci-dessous :
+                </p>
+                <br>
+                <ol class="text-muted text-left">
+                    <li>
+                        Télécharger l'image système pré configurée ici <i class="fa fa-hand-o-right"></i>
+                        <strong>
+                            {% if app.user %}
+                                <a target="_blank" href="/static/mawaqit.img.zip">
+                                    mawaqit.img.zip
+                                </a>
+                            {% else %}
+                                <a href="{{ path("fos_user_security_login") }}">
+                                    Vous devez être connecté pour télécharger l'image système
+                                </a>
+                            {% endif %}
+                        </strong>
+                    </li>
+                    <li>Brancher la carte micro SD sur votre ordinateur via le port dédié ou sur un lecteur USB</li>
+                    <li>Téléchargez le logiciel Etcher ici
+                        <i class="fa fa-hand-o-right"></i>
+                        <a href="https://etcher.io" target="_blank">https://etcher.io</a> puis installez-le sur votre
+                        ordinateur
+                    </li>
+                    <li>
+                        Flashez l'image système mawaqit.img.zip sur la carte micro sd avec
+                        Etcher<br><br>
+                    </li>
+                </ol>
+
+                <img src="{{ asset('bundles/app/agency/img/software/etcher.gif') }}" class="img-responsive" alt=""><br>
+
+                <h3>Dernière étape</h3>
+                <div class="text-muted text-left">
+                    <p>Maintenant que vous avez installé l'image système sur la carte mémoire vous avez deux
+                        possibiltés: <br><br>
+                    </p>
+
+                    <p>
+                        <strong>OPTION 1. Vous avez une connexion internet (WIFI ou Ethernet) ? </strong>
+                        Utilisez la version connectée <strong>(RECOMMANDÉE)</strong> elle bénéficie des avantages
+                        suivants
+                    </p>
+                    <ul>
+                        <li>Pilotage à distance depuis votre smartphone ou n'importe qu'elle ordinateur et tablette</li>
+                        <li>Une version synchronisée sur tous les terminaux, mobile, tablette et écran de la mosquée
+                        </li>
+                        <li>Envoyez des messages et annonces sur l'écran depuis votre smartphone ou ordinateur</li>
+                        <li>Affichage de hadith du prophète "que la prière d'Allah et son salut soient sur lui"</li>
+                        <li>Vous bénificiez des dernières mise à jour automatiquement sans aucune manipulation de votre
+                            part
+                        </li>
+                    </ul>
+                    <br>
+                    <p>
+                        <strong>Suivez les étapes ci-dessous : </strong>
+                    </p>
+
+                    <ol>
+                        <li>Créez votre compte sur notre interface d'administration <a target="_blank"
+                                                                                       href="{{ path('fos_user_registration_register') }}">{{ url('fos_user_registration_register') }}</a>
+                        </li>
+                        <li>Identifiez-vous puis ajoutez et configurez votre mosquée, un lien internet sera généré à la
+                            fin de cette étape
+                        </li>
+                        <li>Démmarez le raspberry et branchez un clavier et une souris usb</li>
+                        <li>Connectez-le à internet (WIFI ou câble Ethernet)</li>
+                        <li>
+                            Ouvrez le fichier <code>online_site.txt</code> présent sur le bureau et remplacez son
+                            contenu
+                            par le lien généré dans votre compte,
+                            exemple: <br>
+                            <code>
+                                {{ url('mosque', {slug: 'mosquee-essunna-houilles'}) }}<br>
+                            </code>
+                        </li>
+                        <li>Sauvegardez et quittez</li>
+                        <li>Lancez Mawaqit depuis le bureau</li>
+                        <li>Au lancement le raspberry vérifie si une connexion internet est disponible,
+                            dans ce cas il lance la version en ligne, sinon il bascule sur la version locale
+                        </li>
+                    </ol>
+
+                    <p><strong>OPTION 2. Vous n'avez pas de connexion internet, lancer le logiciel embarqué : </strong>
+                        Il suffit de brancher le raspberry sur l'écran, le logiciel se lancera tout seul. <br>
+                        Afin de profiter de la toute dernière version du logiciel, il est recommandé d'exécuter les
+                        étapes suivantes : <br>
+                    </p>
+
+                    <ol>
+                        <li>Quittez le mode plein écran avec F11, puis fermez le logiciel</li>
+                        <li>Connetez le raspberry à internet et double-cliquez sur le fichier <code> upgrade.sh</code>
+                            présent sur le bureau puis appuyez sur executer
+                        </li>
+                    </ol>
+                    <p>vous pouvez après configurer les horaires de votre mosquée.<br></p>
+                    <p>
+                        <strong>Important :</strong>
+                        Le Raspberry ne dispose pas d'horloge RTC (un composant éléctronique doté d'une pile) qui permet
+                        de garder l'heure correctement réglée
+                        quand il est éteint.<br>
+                        Il est donc conseillé d'équiper le raspberry
+                        <a href="https://www.amazon.fr/Horloge-pr%C3%A9cision-DS3231-RTC-Compatible-Raspberry/dp/B01F6MJZGQ/ref=sr_1_4?ie=UTF8&qid=1508527126&sr=8-4&keywords=rtc+ds3231">
+                            d'une horloge RTC
+                        </a>
+                        si vous ne comptez pas le connecter à internet, cela évitera la
+                        perte de l'heure système en cas de copure de courant.
+                        Il suffit de la brancher comme illustré ci-dessous et taper les commandes suivantes dans
+                        LXTerminal<br>
+                        <code>sudo date -s "yyyy-mm-dd hh:mm:ss"</code> exemple: <code>sudo date -s
+                            "{{ "now"|date("Y-m-d H:m:s") }}"</code> <br>
+                        <code>sudo hwclock -w</code> <br><br>
+                    </p>
+                </div>
+
+                <img class="img-responsive" src="{{ asset('bundles/app/agency/img/raspberry-rtc.jpg') }}"
+                     alt=""><br><br>
+
+                <h4 class="text-muted">Pour plus d'informations téléchargez nos manuels d'utilisation </h4>
+
+                <div><a target="_blank" href="/static/Mawaqit-mode-d-emploi.pdf">Mawaqit-mode-d-emploi.pdf</a></div>
+                <div><a target="_blank" href="/static/Mawaqit-mode-d-emploi-version-embarquee.pdf">Mawaqit-mode-d-emploi-version-embarquee.pdf</a>
+                </div>
+
+                <h4 class="text-muted">Vous rencontrez des diffucltées ? envoyez nous un message <a href="#contact">c'est
+                        par ici</a></h4>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-heading">Contactez nous</h2>
+                <div class="text-primary text-left" style="font-weight: bold; font-size: 130%">
+                    <p>
+                        Vous avez des questions sur la démarche à suivre pour équiper votre mosquée avec notre logiciel.
+                        Contactez nous :
+                    </p>
+
+                    <ul>
+                        <li>Par WhatsApp <i class="fa fa-whatsapp"></i> : {{ supportTel1 }} / {{ supportTel2 }}</li>
+                        <li>Via le formulaire ci-dessous</li>
+                    </ul>
+                </div>
+
+
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nom *" id="name" required
+                                       data-validation-required-message="Veuillez saisir votre nom.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email *" id="email" required
+                                       data-validation-required-message="Veuillez saisir votre adresse.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Téléphone *" id="phone" required
+                                       data-validation-required-message="Veuillez saisir votre numéro de téléphone.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Message *" id="message" required
+                                          data-validation-required-message="Veuillez saisir votre message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-xl">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
+
+{% block additional_javascripts %}
+    {% javascripts
+        '@AppBundle/Resources/public/flexSlider/jquery.flexslider-min.js'
+        '@AppBundle/Resources/public/agency/js/index.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 2,
+                center: {lat: 48, lng: 3}
+            });
+
+            var mosquesForMap = {{ mosquesForMap|json_encode|raw }};
+            $.each(mosquesForMap, function (i, mosque) {
+                addMosque(mosque, map);
+            })
+        }
+
+        function addMosque(mosque, map) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: {lng: mosque.lng, lat: mosque.lat},
+                title: mosque.name + ' (' + mosque.city + ')',
+                icon: {
+                    url: '{{ asset('favicon.png') }}',
+                    scaledSize: new google.maps.Size(30, 30)
+                }
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: '<div>' +
+                '<h4> ' + mosque.name + ' </h4>' +
+                '<p> ' +
+                (mosque.address ? mosque.address : '') + ' ' + mosque.zipcode + ' ' + mosque.city + ' ' + mosque.country +
+                '</p>' +
+                '<p> ' +
+                '<a target="_blank" href="' + 'https://mawaqit.net/fr/' + mosque.slug + '">' + 'https://mawaqit.net/fr/' + mosque.slug + ' </a>' +
+                '</p>' +
+                '</div>'
+            });
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap">
+    </script>
+
+{% endblock %}

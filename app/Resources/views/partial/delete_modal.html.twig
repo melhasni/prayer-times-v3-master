@@ -1,0 +1,18 @@
+<!-- Modal validation suppression -->
+<div class="modal fade" id="delete-modal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header red">
+                <h4 class="modal-title">{{'warning'|trans}}</h4>
+            </div>
+            <div class="modal-body">
+                {{'delete_element_question'|trans}}
+            </div>
+            <br>
+            <div class="modal-footer">
+                <a href="{{path(path, {id: "_id_"})}}" class="btn btn-danger modal-delete-button" title={{'form.delete.action'|trans}}><span class="glyphicon glyphicon-trash"></span> {{'form.delete.action'|trans}} </a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'cancel'|trans}}</button>
+            </div>
+        </div>
+    </div>
+</div>

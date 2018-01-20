@@ -1,0 +1,13 @@
+<div class="adhan display-none">
+    <div class="ar">
+        <div class="title">دعاء ما بعد الأذان</div>
+        <p>اللّهُـمَّ رَبَّ هَذِهِ الدّعْـوَةِ التّـامَّة وَالصّلاةِ القَـائِمَة آتِ محَـمَّداً الوَسيـلةَ وَالْفَضـيلَة وَابْعَـثْه مَقـامـاً مَحـموداً الَّذي وَعَـدْتَه </p>
+    </div>
+
+    {% if app.request.locale != 'ar' %}
+        <div class="fr">
+            <div class="title">{{'duaAfterAthan.title'|trans}}</div>
+            <p>{{'duaAfterAthan.text'|trans}}</p>
+        </div>
+    {% endif %}
+</div>

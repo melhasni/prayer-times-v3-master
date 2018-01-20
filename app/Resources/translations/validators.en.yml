@@ -1,0 +1,12 @@
+form:
+    configuration:
+        mandatory: Ce champ est obligatoire
+        custom_prayer_method: Les champs "Degré du fajr" et "Degré du ʿisha" doivent être renseignés
+    registration:
+        wrong_password_message: Le mot de passe doit contenir 8 caractères minimum, dont une majuscule, une minuscule et un nombre
+    message:
+        max_enabled_reached: |
+           You have reached the maximum allowed number of activated messages (8 Max),
+           to be able to add more messages please remove or disable old ones.
+        max_reached: |
+           You have reached the maximum allowed number of messages (20 Max).

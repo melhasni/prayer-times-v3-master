@@ -1,0 +1,45 @@
+AppBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            nullable: true
+        content:
+            type: text
+            nullable: true
+        image:
+            type: string
+            length: 255
+            nullable: true
+        enabled:
+            type: boolean
+        position:
+            type: integer
+            gedmo:
+              - sortablePosition
+        updated:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        mosque:
+            gedmo:
+              - sortableGroup
+            targetEntity: AppBundle\Entity\Mosque
+            inversedBy: messages
+            joinColumn:
+                name: mosque_id
+                referencedColumnName: id
+                onDelete: CASCADE             
+    lifecycleCallbacks: {  }

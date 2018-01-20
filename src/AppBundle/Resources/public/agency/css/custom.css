@@ -1,0 +1,113 @@
+/*
+binary consulting custom css
+*/
+body, p{
+    font-size: 16px !important;
+}
+
+header {
+    background-image: url('../img/mosque.jpg');
+}
+
+section#contact ::-webkit-input-placeholder {
+    color: #444;
+}
+section#contact :-moz-placeholder {
+    color: #444;
+}
+section#contact ::-moz-placeholder {
+    color: #444;
+}
+section#contact :-ms-input-placeholder {
+    color: #444;
+}
+
+.form-control {
+    color: #444;
+}
+
+.mosque-image{
+    width: 400px;
+    height: 220px;
+}
+
+.img-responsive{
+    display: inline;
+}
+section {
+    padding: 100px 0;
+}
+
+#mosquees .portfolio-item .portfolio-caption {
+    padding: 15px;
+    height: 90px;
+}
+
+header .intro-text .intro-heading  {
+    font-size: 50px;
+}
+header .intro-text .intro-subheading {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 25px;
+    color: #f7ecb5;
+}
+
+@media (max-width: 767px) {
+    P{
+        text-align: justify;     
+    }
+
+    header .intro-text .intro-heading {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+    header .intro-text .intro-subheading {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .btn-xl {
+        padding: 15px 30px;
+    }
+}
+
+@media (min-width: 768px)
+{
+    header .intro-text {
+        padding-top: 180px;
+        padding-bottom: 100px;
+    }
+
+    .navbar-custom .nav li a {
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 1200px;
+    }
+}
+
+.service-heading{
+    margin: 25px 0;
+}
+
+a, code {
+    overflow-wrap: break-word;
+}
+
+#map {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    height: 400px;
+}

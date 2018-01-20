@@ -1,0 +1,18 @@
+.block-image img
+{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-group .form-control {
+    color: #0077b3;
+    border-left:none;
+    padding-left:0;
+    
+}
+.input-group .input-group-addon {
+    color: #0077b3;
+    background-color:#fff;
+    border-right:none;
+    padding-right: 0;
+}

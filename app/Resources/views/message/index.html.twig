@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'partial/flash_msg.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 col-xs-12" style="margin-top: 10px">
+            <h3>{{ 'message.mosque'|trans({'%mosque%': mosque.name}) }}</h3></div>
+        <div class="col-md-4 col-xs-12 text-right">
+            <a href="{{ path('message_create', {'mosque': mosque.id}) }}" class="btn btn-primary"><i
+                        class="fa fa-plus"></i> {{ 'add'|trans }}</a>
+            <a href="{{ path('mosque_index') }}" class="btn btn-default"><i
+                        class="fa fa-arrow-left"></i> {{ 'return'|trans }}</a>
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+        <div class="col-md-8 col-xs-12">
+            <div class="alert alert-info" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                {{ 'message.info'|trans|raw }}
+            </div>
+            <div class="alert alert-success" role="alert" style="word-wrap: break-word;">
+                {{ 'message.display_messages_in_screen_1'|trans }} : <a target="_blank"
+                                                                        href="{{ path("messages", {slug: mosque.slug}) }}">{{ url("messages", {slug: mosque.slug}) }}</a><br>
+                {{ 'message.display_messages_in_screen_2'|trans }}
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden-xs hidden-sm">
+        <table class="table table-inverse">
+            <thead>
+            <tr class="warning">
+                <th style="width: 5%">{{ 'order'|trans }}</th>
+                <th style="width: 30%">{{ 'title'|trans }}</th>
+                <th style="width: 50%">{{ 'content'|trans }}</th>
+                <th class="text-center" style="width: 5%">Photo ?</th>
+                <th class="text-center" style="width: 5%">{{ 'active'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="sortable">
+            {% for message in messages %}
+                <tr data-id="{{ message.id }}" data-remote="{{ path('message_sort') }}" role="button">
+                    <td> <i class="fa fa-arrows"></i></td>
+                    <td>{{ message.title }}</td>
+                    <td>
+                        {% if message.image %}
+                            <img src="{{ vich_uploader_asset(message, 'file') }}" alt="" width="100px" height="70px"/>
+                        {% else %}
+                            {{ message.content|raw }}
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <span class="fa fa-{{ message.image ? 'check' : 'close' }}"></span>
+                    </td>
+                    <td class="text-center">
+                        <span class="fa fa-{{ message.enabled ? 'check' : 'close' }}"></span>
+                    </td>
+                    <td>
+                        <div class="btn-action">
+                            <a href="{{ path('message_edit', {mosque: mosque.id, message: message.id}) }}"
+                               class="btn btn-primary" title="{{ 'form.edit.action'|trans }}"><span
+                                        class="glyphicon glyphicon-pencil"></span></a><br>
+                        </div>
+                        {% include 'partial/delete_button.html.twig' with {entity: message} %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="hidden-md hidden-lg">
+        {% for message in mosque.messages %}
+            <div class="row" style="border-bottom: 1px solid #ccc; padding: 10px 0; ">
+                <div class="col-xs-4">
+                    <div><strong>{{ message.title }}</strong></div>
+                    <div>Photo ? <span class="fa fa-{{ message.image ? 'check' : 'close' }}"></span></div>
+                    <div>{{ 'enabled'|trans }} ? <span
+                                class="fa fa-{{ message.enabled ? 'check' : 'close' }}"></span></div>
+                </div>
+                <div class="col-xs-6">
+                    {% if message.image %}
+                        <img src="{{ vich_uploader_asset(message, 'file') }}" alt="" width="100px" height="70px"/>
+                    {% else %}
+                        {{ message.content|raw }}
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="btn-action">
+                        <a href="{{ path('message_edit', {mosque: mosque.id, message: message.id}) }}"
+                           class="btn btn-primary btn-action" title="{{ 'form.edit.action'|trans }}"><span
+                                    class="glyphicon glyphicon-pencil"></span></a><br>
+                    </div>
+                    {% include 'partial/delete_button.html.twig' with {entity: message} %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'partial/delete_modal.html.twig' with {path: 'message_delete'} %}
+
+{% endblock %}
+
+    {% block javascripts %}
+        {% javascripts
+            '@AppBundle/Resources/public/js/delete_modal.js'
+            '@AppBundle/Resources/public/js/sort.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}

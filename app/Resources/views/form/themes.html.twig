@@ -1,0 +1,64 @@
+{% extends 'bootstrap_3_layout.html.twig' %}
+
+{% block form_label %}
+    {{ parent() }}
+
+    {% if required %}
+        <span style="color: red" title="{{ 'required'|trans }}">*</span>
+    {% endif %}
+
+    {% if attr.title is defined and  attr.title is not empty %}
+        <span class="fa fa-question-circle hidden-xs" title="{{ attr.title|trans }}"></span>
+    {% endif %}
+
+    {% if attr.help is defined and  attr.help is not empty %}
+        <div class="text-muted"> {{ attr.help|trans }}</div>
+    {% endif %}
+{% endblock %}
+
+{% block checkbox_widget -%}
+    {%- set parent_label_class = parent_label_class|default(label_attr.class|default('')) -%}
+    {% if 'checkbox-inline' in parent_label_class %}
+        {{- form_label(form, null, { widget: parent() }) -}}
+    {% else -%}
+        {{ parent() }}
+        {% if attr.title is defined and  attr.title is not empty %}
+            <span class="fa fa-question-circle hidden-xs" title="{{ attr.title|trans }}"></span>
+        {% endif %}
+    {%- endif %}
+{%- endblock checkbox_widget %}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <div class="alert alert-danger">
+                {{ error.message|raw }}
+            </div>
+        {%- endfor -%}
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{% block checkbox_radio_label -%}
+    {# Do not display the label if widget is not defined in order to prevent double label rendering #}
+    {%- if widget is defined -%}
+        {%- if required -%}
+            {%- set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' required')|trim}) -%}
+        {%- endif -%}
+        {%- if parent_label_class is defined -%}
+            {%- set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' ' ~ parent_label_class)|trim}) -%}
+        {%- endif -%}
+        {%- if label is not same as(false) and label is empty -%}
+            {%- if label_format is not empty -%}
+                {%- set label = label_format|replace({
+                    '%name%': name,
+                    '%id%': id,
+                }) -%}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+        {{- widget|raw }} {{ label is not same as(false) ? (translation_domain is same as(false) ? label|raw : label|trans({}, translation_domain)|raw) -}}
+        </label>
+    {%- endif -%}
+{%- endblock checkbox_radio_label %}
